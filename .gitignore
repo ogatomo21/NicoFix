@@ -1,0 +1,12 @@
+# Go build and test artifacts
+/NicoFix
+*.exe
+*.test
+*.out
+
+# Local secrets and environment files
+*.env
+
+# OS metadata
+.DS_Store
+Thumbs.db
