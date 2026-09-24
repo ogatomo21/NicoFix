@@ -31,13 +31,18 @@ func TestFixedURLs(t *testing.T) {
 			want:    []string{"https://www.nicovideo.gay/watch/sm12345678?ref=test#part"},
 		},
 		{
+			name:    "two-letter alphabetic video identifiers",
+			content: "https://nicovideo.jp/watch/nm1 https://sp.nicovideo.jp/watch/AB123",
+			want:    []string{"https://nicovideo.gay/watch/nm1", "https://sp.nicovideo.gay/watch/AB123"},
+		},
+		{
 			name:    "duplicates are removed in first appearance order",
 			content: "https://nicovideo.jp/watch/sm1 https://nicovideo.jp/watch/sm1 https://nicovideo.jp/watch/sm2",
 			want:    []string{"https://nicovideo.gay/watch/sm1", "https://nicovideo.gay/watch/sm2"},
 		},
 		{
 			name:    "unsupported URLs are ignored",
-			content: "https://nicovideo.gay/watch/sm1 https://nicovideo.jp/watch/sm https://example.com/watch/sm1",
+			content: "https://nicovideo.gay/watch/sm1 https://nicovideo.jp/watch/sm https://nicovideo.jp/watch/a123 https://nicovideo.jp/watch/abc123 https://nicovideo.jp/watch/１２3 https://example.com/watch/sm1",
 			want:    nil,
 		},
 	}

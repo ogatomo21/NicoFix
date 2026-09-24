@@ -11,7 +11,7 @@ import (
 	"github.com/bwmarrin/discordgo"
 )
 
-var niconicoURL = regexp.MustCompile(`https?://(?:(?:www|sp)\.)?nicovideo\.jp/watch/sm[0-9]+(?:\?[^\s#<>"']*)?(?:#[^\s<>"']*)?`)
+var niconicoURL = regexp.MustCompile(`https?://(?:(?:www|sp)\.)?nicovideo\.jp/watch/[A-Za-z]{2}[0-9]+(?:\?[^\s#<>"']*)?(?:#[^\s<>"']*)?`)
 
 func fixedURLs(content string) []string {
 	seen := make(map[string]struct{})
