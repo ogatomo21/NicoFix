@@ -15,12 +15,14 @@ func TestFixedURLs(t *testing.T) {
 	}{
 		{
 			name:    "all supported hosts and schemes",
-			content: "http://nicovideo.jp/watch/sm1 https://nicovideo.jp/watch/sm2 http://www.nicovideo.jp/watch/sm3 https://www.nicovideo.jp/watch/sm4",
+			content: "http://nicovideo.jp/watch/sm1 https://nicovideo.jp/watch/sm2 http://www.nicovideo.jp/watch/sm3 https://www.nicovideo.jp/watch/sm4 http://sp.nicovideo.jp/watch/sm5 https://sp.nicovideo.jp/watch/sm6",
 			want: []string{
 				"http://nicovideo.gay/watch/sm1",
 				"https://nicovideo.gay/watch/sm2",
 				"http://www.nicovideo.gay/watch/sm3",
 				"https://www.nicovideo.gay/watch/sm4",
+				"http://sp.nicovideo.gay/watch/sm5",
+				"https://sp.nicovideo.gay/watch/sm6",
 			},
 		},
 		{
